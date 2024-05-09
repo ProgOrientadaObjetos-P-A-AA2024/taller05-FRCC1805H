@@ -2,13 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package paquete1;
+package paquete2;
+
+
 
 /**
  *
  * @author LENOVO
  */
-public class Automovil {
+public class Automovil2 {
     private int ceduladueño;
     private String marcavehiculo;
     private int añofabricacion;
@@ -16,13 +18,16 @@ public class Automovil {
     private double valormatricula;
     private int añosantiguedadvehiculo;
     
-    public Automovil(int cd, String mv,int af,double vv,double a){
+    
+    
+    public Automovil2(int cd, String mv,int af,double a){
         ceduladueño = cd;
         marcavehiculo = mv;
         añofabricacion = af;
-        valorvehiculo = vv;
+        valorvehiculo = a;
         
     }
+
     
     public void establecerCedulaDueño(int cd){
         ceduladueño = cd;
@@ -40,7 +45,7 @@ public class Automovil {
         valorvehiculo = vv;
     }
     
-    public void establecerAñosAntiguedadVehiculo(int a){
+    public void establecerAñosAntiguedadVehiculo(){
         añosantiguedadvehiculo = 2024 - añofabricacion;
     }
     
@@ -70,7 +75,7 @@ public class Automovil {
     }
     
     public double obtenerValorMatricula(){
-        valormatricula = 0.002 * valorvehiculo ;
+        valormatricula = 0.002 * valorvehiculo * añosantiguedadvehiculo;
         return valormatricula;
     }
     
@@ -92,4 +97,5 @@ public class Automovil {
         return cadena;
         
     }
+    
 }

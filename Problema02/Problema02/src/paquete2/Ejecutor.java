@@ -9,11 +9,11 @@ en función de un número de iteraciones, de acuerdo a un valor ingresado
 por el usuario. Al final del ciclo se debe presentar una sola cadena 
 con todos los valores de los objetos previos ingresados.
 
-En una clase llamada EjecutorDos, cree un ciclo repetitivo que se ejecutará 
+En una clase llamada Ejecutor, cree un ciclo repetitivo que se ejecutará 
 hasta que el usuario lo decida. Al final del ciclo se debe presentar 
 una sola cadena con todos los valores de los objetos previos ingresados.
  */
-package paquete1;
+package paquete2;
 
 import java.util.Scanner;
 
@@ -23,42 +23,48 @@ import java.util.Scanner;
  */
 public class Ejecutor {
 
+    private static Object[] Matricula1;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
         Scanner entrada = new Scanner(System.in);
+
         int ceduladueño;
         String marcavehiculo;
+        int añofabricacion;
         double valorvehiculo;
         double valormatricula;
-        int añosantiguedadvehiculo;
-        int opcion;
+        boolean bandera;
+        String opcion;
 
-        System.out.println("Cuantas veces desea Ingresar la Factura "
-                + "de Automoviles\n");
-        opcion = entrada.nextInt();
+        bandera = true;
 
-        for (int i = 1; i <= opcion; i++) {
-            entrada.nextLine();
-            System.out.println("Ingrese La Cedula del Dueño\n");
+        while (bandera) {
+            System.out.println("Ingrese la Cedula del Dueño\n");
             ceduladueño = entrada.nextInt();
             System.out.println("Ingrese La Marca del Vehiculo\n");
             marcavehiculo = entrada.nextLine();
             entrada.nextLine();
-            System.out.println("Ingrese El valor del Vehiculo\n");
+            System.out.println("Ingrese El Año del Vehiculo \n");
+            añofabricacion = entrada.nextInt();
+            System.out.println("Ingrese El Valor del Vehiculo \n");
             valorvehiculo = entrada.nextDouble();
-            System.out.println("Ingrese El valor de la Matricula\n");
-            valormatricula = entrada.nextDouble();
-            System.out.println("Ingrese los Años de Antiguedad del Vehiculo\n");
-            añosantiguedadvehiculo = entrada.nextInt();
 
-            entrada.nextLine();
-            Automovil Matricula2 = new Automovil();
+            Automovil2 A1 = new Automovil2(ceduladueño, marcavehiculo,
+                                         añofabricacion, valorvehiculo);
+            System.out.printf(" %s\n ", A1);
 
-            System.out.printf("%s \n",Matricula2);
+            entrada.nextLine(); // limpieza del buffer
+            System.out.println("Desea ingresar más Automoviles. Ingrese n para"
+                    + "salir");
+            opcion = entrada.nextLine();
+            if (opcion.equals("n")) {
+                bandera = false;
+            }
+
         }
     }
 
